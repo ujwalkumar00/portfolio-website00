@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujwal's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: rgb(1, 1, 103);
+            font-family: "Poppins", sans-serif;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgb(202, 202, 202);
+            height: 80px;
+            width: 100%;
+            background-color: rgb(2, 2, 71);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 0 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-family: "Quicksand", sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        ul.active {
+            display: block;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            background-color: rgb(2, 2, 71);
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        li {
+            margin: 0 20px;
+        }
+
+        ul.active li {
+            margin: 10px 0;
+        }
+
+        a {
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: purple;
+        }
+
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .left {
+            flex: 1;
+            text-align: center;
+            margin-top: 20vh;
+        }
+
+        .left h2 {
+            font-size: 4rem;
+            color: white;
+            margin: 8px 0;
+        }
+
+        .left h2 span {
+            color: #673AB7;
+        }
+
+        .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .right img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .second-section {
+            max-height: 50%;
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .second-section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: rgb(222, 217, 217);
+        }
+
+        .experience-details {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .experience-details p {
+            margin-bottom: 20px;
+        }
+
+        .experience-details ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .experience-details li {
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #0e0d0d;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            font-size: 1rem;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        footer .social-icons i {
+            margin: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        footer .social-icons i:hover {
+            color: #673AB7;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .content {
+                flex-direction: column;
+                text-align: center;
+                margin-top: -11vh;
+            }
+
+            .left h2 {
+                font-size: 1.5rem;
+            }
+
+            .right img {
+                width: 80%;
+            }
+
+            footer {
+                padding: 20px;
+            }
+
+            footer .social-icons {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">Ujwal's Portfolio</div>
+        <i class="ri-menu-line hamburger"></i>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Me</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="left">
+            <h2>Hi, My name is <span>Ujwal</span> and </h2>
+            <h2>I am passionate about</h2>
+            <h2><span id="element"></span></h2>
+        </div>
+        <div class="right">
+            <img src="pg.png" alt="Profile Image">
+        </div>
+    </div>
+
+    <div class="second-section">
+        <hr>
+        <h2>Past Experience</h2>
+        <div class="experience-details">
+            <p>Over the past few years, I have gained valuable experience in multiple areas of the digital world. Here are a few of my key achievements:</p>
+            <ul>
+                <li><strong>Web Designer</strong> at XYZ Corp (2019–2021): Designed and developed visually appealing, user-friendly websites for multiple clients, focusing on enhancing user experience (UX) and interface design (UI).</li>
+                <li><strong>Video Editor</strong> at ABC Media (2021–2023): Edited high-quality videos for marketing campaigns, social media content, and promotional videos, using advanced editing tools like Adobe Premiere Pro and After Effects.</li>
+                <li><strong>Web Developer</strong> at DEF Tech (2023–Present): Built and maintained responsive websites, utilizing front-end and back-end technologies such as HTML, CSS, JavaScript, React, and Node.js to create scalable, performance-driven solutions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Ujwal's Developer Portfolio</p>
+        <div class="social-icons">
+            <i class="ri-facebook-circle-line"></i>
+            <i class="ri-twitter-line"></i>
+            <i class="ri-linkedin-box-line"></i>
+            <i class="ri-github-fill"></i>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Designing', 'Video Editing', 'Web Development'],
+            typeSpeed: 50,
+        });
+
+        // Toggle Navbar
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('ul');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
